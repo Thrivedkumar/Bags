@@ -1,0 +1,66 @@
+.home {
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.layout {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  text-align: left;
+}
+
+.img-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-img,
+.hover-img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+.hover-img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.img-box:hover .hover-img {
+  opacity: 1;
+}
+
+.img-box:hover .main-img {
+  opacity: 0;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #000;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.old-price {
+  margin-left: 8px;
+  text-decoration: line-through;
+  color: #999;
+}

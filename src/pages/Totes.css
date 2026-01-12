@@ -1,0 +1,41 @@
+/* 🔹 TOP BANNER */
+.totes-banner {
+  height: 220px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 80px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.banner-title {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* 🔹 PAGE LAYOUT */
+.Totes-layout {
+  display: flex;
+  gap: 40px;
+  padding: 40px 80px;
+}
+
+.Totes-page {
+  flex: 1;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+}

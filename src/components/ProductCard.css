@@ -1,0 +1,51 @@
+.card {
+  text-align: left;
+}
+
+/* IMAGE BOX */
+.img-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* IMAGES */
+.main-img,
+.hover-img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+/* HOVER IMAGE */
+.hover-img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+/* HOVER EFFECT */
+.img-box:hover .hover-img {
+  opacity: 1;
+}
+
+.img-box:hover .main-img {
+  opacity: 0;
+}
+
+/* TEXT */
+.name {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 14px;
+}
+
+.old-price {
+  margin-left: 6px;
+  text-decoration: line-through;
+  color: #999;
+}

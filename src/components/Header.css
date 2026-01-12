@@ -1,0 +1,37 @@
+/* full header width */
+.bags-header {
+  width: 100%;
+}
+
+/* background behind bag button */
+.bags-bg {
+  width: 100%;
+  height: 220px;
+  background-image: url("https://www.tigermarron.com/cdn/shop/collections/Luxe_1.png?v=1746782820&width=2000");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* optional dark overlay */
+.bags-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* FIX bag button to LEFT */
+.bags-left {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.top-bar{
+  text-align: center;
+  background-color: red;
+  padding: 20px;
+  color: azure;
+}
