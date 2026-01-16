@@ -1,3 +1,5 @@
+import "./OnSaleBadge.css";
+
 export default function OnSaleBadge({ price, originalPrice }) {
   if (!originalPrice || originalPrice <= price) return null;
 
@@ -5,5 +7,9 @@ export default function OnSaleBadge({ price, originalPrice }) {
     ((originalPrice - price) / originalPrice) * 100
   );
 
-  return <span className="badge">Save {discount}%</span>;
+  return (
+    <div className="sale-badge">
+      SAVE {discount}%
+    </div>
+  );
 }

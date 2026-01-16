@@ -6,11 +6,13 @@ export default function SidebarFilters({
   setMinPrice,
   setMaxPrice,
 }) {
+  const MIN = 500;
+  const MAX = 50000;
+
   return (
     <aside className="filters">
       {/* AVAILABILITY */}
       <h4>AVAILABILITY</h4>
-
       <label className="switch">
         <input type="checkbox" />
         <span className="slider"></span>
@@ -21,38 +23,52 @@ export default function SidebarFilters({
       {/* PRICE */}
       <h4>PRICE</h4>
 
-      {/* PRICE SLIDER */}
+      {/* RANGE SLIDER (controls MAX price) */}
       <input
         type="range"
-        min="500"
-        max="50000"
-        step="100"
+        min={MIN}
+        max={MAX}
+        step={100}
         value={maxPrice}
-        onChange={(e) => setMaxPrice(Number(e.target.value))}
+        onChange={(e) => {
+          const value = Number(e.target.value);
+          setMaxPrice(value);
+          if (value < minPrice) {
+            setMinPrice(value);
+          }
+        }}
       />
 
-      {/* PRICE INPUTS */}
+      {/* INPUT BOXES */}
       <div className="price-box">
+        {/* MIN */}
         <input
           type="number"
-          min="500"
+          min={MIN}
           max={maxPrice}
           value={minPrice}
-          onChange={(e) =>
-            setMinPrice(Math.min(maxPrice, Math.max(500, Number(e.target.value))))
-          }
+          onChange={(e) => {
+            const value = Number(e.target.value);
+            if (value <= maxPrice && value >= MIN) {
+              setMinPrice(value);
+            }
+          }}
         />
 
         <span>to</span>
 
+        {/* MAX */}
         <input
           type="number"
           min={minPrice}
-          max="50000"
+          max={MAX}
           value={maxPrice}
-          onChange={(e) =>
-            setMaxPrice(Math.max(minPrice, Number(e.target.value)))
-          }
+          onChange={(e) => {
+            const value = Number(e.target.value);
+            if (value >= minPrice && value <= MAX) {
+              setMaxPrice(value);
+            }
+          }}
         />
       </div>
 

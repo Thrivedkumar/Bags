@@ -104,3 +104,16 @@
   letter-spacing: 3px;
   text-align: center;
 }
+.sort-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sort-bar select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}

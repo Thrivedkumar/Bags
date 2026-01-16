@@ -49,3 +49,7 @@
   text-decoration: line-through;
   color: #999;
 }
+.img-box {
+  position: relative;
+  overflow: hidden;
+}

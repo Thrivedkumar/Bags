@@ -1,9 +1,13 @@
+import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import SidebarFilters from "../components/SidebarFilters";
+import products from "../data/products";
 import "./Handbags.css";
 
 export default function Handbags() {
-  
+  const [minPrice, setMinPrice] = useState(500);
+  const [maxPrice, setMaxPrice] = useState(20000);
+
   const handbags = [
     {
       id: 1,
@@ -86,23 +90,41 @@ export default function Handbags() {
     },
   ];
 
+  // ✅ PRICE FILTER
+  const filteredProducts = handbags.filter(
+    (item) => item.price >= minPrice && item.price <= maxPrice
+  );
+
   return (
-     <>
-      {/* 🔹 TOP BANNER */}
+    <>
+      {/* TOP BANNER */}
       <div className="totes-banner">
-        <div className="breadcrumb">HOME / SHOP / Handbags</div>
+        <div className="breadcrumb">HOME / SHOP / HANDBAGS</div>
         <h1 className="banner-title">Handbags</h1>
       </div>
 
-    <div className="handbags-layout">
-      <SidebarFilters />
+      <div className="handbags-layout">
+        {/* SIDEBAR */}
+        <SidebarFilters
+  minPrice={minPrice}
+  maxPrice={maxPrice}
+  setMinPrice={setMinPrice}
+  setMaxPrice={setMaxPrice}
+/>
 
-      <div className="product-grid">
-        {handbags.map((item) => (
-          <ProductCard key={item.id} product={item} />
-        ))}
+        {/* PRODUCTS */}
+        <div className="Handbags-pages">
+        <div className="product-grid">
+          {filteredProducts.length === 0 ? (
+            <p>No products found</p>
+          ) : (
+            filteredProducts.map((item) => (
+              <ProductCard key={item.id} product={item} />
+            ))
+          )}
+        </div>
       </div>
-    </div>
+      </div>
     </>
   );
 }

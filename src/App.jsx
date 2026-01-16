@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Handbags from "./pages/Handbags";
@@ -9,6 +9,9 @@ import Minibags from "./pages/Minibags";
 import Laptopbags from "./pages/Laptopbags";
 import Dufflebags from "./pages/Dufflebags";
 import Luggagebags from "./pages/Luggagebags";
+import ProductDetails from"./pages/ProductDetails";
+import CategoryPage from "./pages/CategoryPage";
+import Cart from "./pages/Cart";
 
 export default function App() {
   return (
@@ -28,6 +31,9 @@ export default function App() {
         <Route path="/backpacks" element={<Backpacks />} />
         <Route path="/duffle-bags" element={<Dufflebags />} />
         <Route path="/luggage-bags" element={<Luggagebags />} />
+        <Route path="/shop/:category"element={<CategoryPage/>}/>
+        <Route path="/product/:id"  element={<ProductDetails/>}/>
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       {/* </BrowserRouter> */}
     </>
